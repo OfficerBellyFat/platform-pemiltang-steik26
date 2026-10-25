@@ -1,0 +1,483 @@
+/* ==========================================================================
+   Pemilihan GENESIS STEI-K '26 — kerangka (HTML + CSS only)
+   Desain: Figma "Web-pemiltang". Tidak ada JavaScript di sini.
+   Layout referensi desktop 1440 × 1024; di bawah itu menyesuaikan lebar layar.
+   ========================================================================== */
+
+/* ---------- Fonts (self-hosted) ---------- */
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/poppins-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/poppins-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/inter-latin-wght-normal.woff2') format('woff2');
+}
+
+/* ---------- Tokens ---------- */
+:root {
+  --bg: #f5f3ee;
+  --ink: #172d43;
+  --muted: #66717a;
+  --line: #dadddc;
+  --card: rgba(107, 169, 255, 0.2);
+  --tally: #26406f;
+  --font-display: 'Poppins', system-ui, sans-serif;
+  --font-ui: 'Inter', system-ui, sans-serif;
+  --pad-x: clamp(16px, 6.1vw, 88px);
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: #000;
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  display: block;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Page shell ---------- */
+.pm {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
+  isolation: isolate;
+}
+.stage {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+  text-align: center;
+}
+
+/* ---------- Background blobs ----------
+   Posisi pusat mengikuti frame Figma (1440 × 1024). Tiap halaman punya
+   class step-* di .pm untuk menggeser blob. */
+.blob {
+  position: absolute;
+  z-index: -1;
+  width: 783.6px;
+  max-width: none;
+  pointer-events: none;
+}
+.blob-left {
+  left: calc(148px - 391.8px);
+  top: calc(41% - 391.8px);
+}
+.blob-right {
+  right: calc(114px - 391.8px);
+  top: calc(67% - 391.8px);
+}
+.step-login .blob-left {
+  top: calc(64% - 391.8px);
+}
+.step-login .blob-right {
+  top: calc(36% - 391.8px);
+}
+.step-tercatat .blob-left {
+  left: calc(230px - 391.8px);
+  top: calc(35% - 391.8px);
+}
+.step-tercatat .blob-right {
+  right: calc(440px - 391.8px);
+  top: calc(87% - 391.8px);
+}
+
+/* ---------- Header ---------- */
+.top {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding: 0 var(--pad-x);
+  font-family: var(--font-ui);
+}
+.logo-crop {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.logo-crop img {
+  position: absolute;
+  top: -97.95%;
+  left: -33.33%;
+  width: 166.15%;
+  height: 294.06%;
+  max-width: none;
+}
+.top-logo {
+  width: 99px;
+  height: 56px;
+}
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 13px;
+}
+.top-nav .muted {
+  color: var(--muted);
+}
+.top-nav .home {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--ink);
+}
+.sep {
+  display: inline-block;
+  width: 1px;
+  height: 24px;
+  background: var(--line);
+}
+.year {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+}
+@media (max-width: 640px) {
+  .top-nav {
+    gap: 16px;
+  }
+  .top-nav .muted,
+  .top-nav .sep {
+    display: none;
+  }
+  .year {
+    font-size: 10px;
+  }
+}
+
+/* ---------- Footer ---------- */
+.foot {
+  display: flex;
+  height: 43px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 var(--pad-x);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: 11px;
+}
+.foot-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.foot-links .sep {
+  height: 12px;
+}
+.foot-links .dark {
+  color: var(--ink);
+}
+
+/* ---------- Typography ---------- */
+.title {
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+.lead {
+  max-width: 796px;
+  margin-top: 24px;
+  font-size: clamp(16px, 1.7vw, 24px);
+  text-wrap: balance;
+}
+.lead-narrow {
+  max-width: 600px;
+  margin-top: 32px;
+  font-size: clamp(16px, 1.5vw, 20px);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 24px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+}
+.btn:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+.btn-dark {
+  background: var(--ink);
+  color: #fff;
+}
+.btn-light {
+  background: #dcdedd;
+  color: #000;
+}
+.btn-lg {
+  height: 60px;
+  padding: 0 30px;
+  font-size: 17px;
+}
+.btn-back {
+  margin-top: 40px;
+}
+.flip {
+  transform: scaleX(-1);
+}
+
+/* ---------- Login ---------- */
+.login-logo {
+  width: min(336px, 80vw);
+  aspect-ratio: 336 / 189;
+  margin-bottom: 8px;
+}
+.login-card {
+  display: flex;
+  width: min(434px, 100%);
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border-radius: 30px;
+  background: var(--card);
+  padding: 44px 49px 42px;
+  font-family: var(--font-ui);
+}
+.login-card input {
+  width: 100%;
+  height: 52px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fff;
+  padding: 0 16px;
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+}
+.login-card input::placeholder {
+  color: var(--muted);
+}
+.login-card input:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* ---------- Candidate cards ---------- */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(24px, 8vw, 130px);
+  margin-top: 56px;
+}
+.cards-rekap {
+  margin-top: 32px;
+}
+.card {
+  position: relative;
+  display: block;
+  width: min(419px, 82vw);
+  aspect-ratio: 419 / 447;
+  overflow: hidden;
+  border-radius: 30px;
+  background: var(--card);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+a.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.25);
+}
+a.card:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 4px;
+}
+/* .photo = kotak foto di dalam kartu; img di dalamnya di-crop persis seperti di Figma */
+.photo {
+  position: absolute;
+  overflow: hidden;
+}
+.photo img {
+  position: absolute;
+  max-width: none;
+}
+.card-cheryl .photo {
+  top: 13.65%;
+  left: 13.6%;
+  width: 78%;
+  height: 70.5%;
+}
+.card-cheryl .photo img {
+  top: -25.82%;
+  left: -1.19%;
+  width: 101.19%;
+  height: 140.28%;
+}
+.card-muchsin .photo {
+  top: 8.5%;
+  left: 12.2%;
+  width: 75.8%;
+  height: 73.6%;
+}
+.card-muchsin .photo img {
+  top: -51.28%;
+  left: -26.15%;
+  width: 149.63%;
+  height: 192.31%;
+}
+.name {
+  position: absolute;
+  inset: auto 0 0 0;
+  color: #fff;
+  font-size: clamp(30px, 3.5vw, 50px);
+  font-weight: 600;
+  line-height: 1.2;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- Rekapitulasi ---------- */
+.tally {
+  display: flex;
+  width: min(419px, 82vw);
+  min-height: 117px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto 0;
+  border-radius: 30px;
+  background: #fff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  color: var(--tally);
+}
+.tally strong {
+  font-size: clamp(32px, 3.5vw, 50px);
+  font-weight: 600;
+  line-height: 1.1;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.tally span {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* ---------- Konfirmasi (modal tanpa JS, memakai :target) ---------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.modal:target {
+  display: flex;
+}
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(40, 40, 40, 0.42);
+}
+.modal-box {
+  position: relative;
+  width: min(480px, 100%);
+  border-radius: 30px;
+  background: #fff;
+  padding: 36px 40px;
+  text-align: center;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.4;
+}
+.modal-box .chosen {
+  margin-top: 12px;
+  color: var(--tally);
+  font-size: 16px;
+  font-weight: 600;
+}
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 28px;
+}
+.modal-actions .btn {
+  height: 60px;
+  padding: 0 28px;
+  font-size: 17px;
+}
+@media (max-width: 420px) {
+  .modal-box {
+    padding: 28px 20px;
+  }
+  .modal-actions {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .card {
+    transition: none;
+  }
+}

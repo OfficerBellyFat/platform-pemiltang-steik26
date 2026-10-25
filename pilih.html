@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pilih GENESIS · Pemilihan GENESIS STEI-K '26</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/img/logo-steik.webp" type="image/webp">
+  <link rel="preload" href="fonts/poppins-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="pm step-pilih">
+  <img class="blob blob-left" src="assets/img/blob-left.svg" alt="" aria-hidden="true">
+  <img class="blob blob-right" src="assets/img/blob-right.svg" alt="" aria-hidden="true">
+
+  <header class="top">
+    <a href="index.html" class="logo-crop top-logo" aria-label="STEI-K — beranda"><img src="assets/img/logo-steik.webp" alt="STEIK" width="709" height="709"></a>
+    <nav class="top-nav" aria-label="Pemilihan">
+      <span class="muted">Panitia</span>
+      <!-- TODO: arahkan ke situs utama -->
+      <a href="#" class="home">Home <img src="assets/icons/external-link.svg" alt="" width="15" height="15"></a>
+      <span class="sep" aria-hidden="true"></span>
+      <span class="year"><img src="assets/icons/ballot.svg" alt="" width="18" height="18">2026 PEMILIHAN GENESIS</span>
+    </nav>
+  </header>
+
+  <main class="stage">
+    <h1 class="title">Choose your GENESIS!</h1>
+    <p class="lead">Mohon untuk pilih dengan bijak, suara Anda akan anonim dan sangat penting bagi STEI-K ‘26</p>
+    <ul class="cards">
+      <li>
+        <a class="card card-cheryl" href="#konfirmasi-cheryl-viby" aria-label="Pilih Cheryl Viby">
+          <span class="photo"><img src="assets/img/cheryl-viby.webp" alt="" width="900" height="1200"></span>
+          <span class="name">Cheryl Viby</span>
+        </a>
+      </li>
+      <li>
+        <a class="card card-muchsin" href="#konfirmasi-muchsin-edo" aria-label="Pilih Muchsin Edo">
+          <span class="photo"><img src="assets/img/muchsin-edo.webp" alt="" width="900" height="1200"></span>
+          <span class="name">Muchsin Edo</span>
+        </a>
+      </li>
+    </ul>
+  </main>
+
+  <footer class="foot">
+    <p>© 2026 STEI-K ‘26</p>
+    <p class="foot-links"><span>Accessibility</span><span>Privacy</span><span class="sep" aria-hidden="true"></span><span class="dark">Need help?</span></p>
+  </footer>
+</div>
+
+<!-- Konfirmasi untuk Cheryl Viby. Terbuka lewat :target (tanpa JS); "Kembali" menutup lagi.
+     TODO(backend): "Saya yakin" harus mengirim pilihan (cheryl-viby) ke server sebelum menuju tercatat.html. -->
+<div class="modal" id="konfirmasi-cheryl-viby" role="dialog" aria-modal="true" aria-labelledby="konfirmasi-cheryl-viby-teks">
+  <a class="modal-backdrop" href="#" aria-label="Tutup"></a>
+  <div class="modal-box">
+    <p id="konfirmasi-cheryl-viby-teks">Apakah anda yakin untuk memilih pilihan anda?<br>Anda hanya bisa memilih GENESIS 1x</p>
+    <p class="chosen">Cheryl Viby</p>
+    <div class="modal-actions">
+      <a class="btn btn-dark" href="#"><img class="flip" src="assets/icons/arrow-right.svg" alt="" width="22" height="22"> Kembali</a>
+      <a class="btn btn-light" href="tercatat.html">Saya yakin</a>
+    </div>
+  </div>
+</div>
+
+<!-- Konfirmasi untuk Muchsin Edo. Terbuka lewat :target (tanpa JS); "Kembali" menutup lagi.
+     TODO(backend): "Saya yakin" harus mengirim pilihan (muchsin-edo) ke server sebelum menuju tercatat.html. -->
+<div class="modal" id="konfirmasi-muchsin-edo" role="dialog" aria-modal="true" aria-labelledby="konfirmasi-muchsin-edo-teks">
+  <a class="modal-backdrop" href="#" aria-label="Tutup"></a>
+  <div class="modal-box">
+    <p id="konfirmasi-muchsin-edo-teks">Apakah anda yakin untuk memilih pilihan anda?<br>Anda hanya bisa memilih GENESIS 1x</p>
+    <p class="chosen">Muchsin Edo</p>
+    <div class="modal-actions">
+      <a class="btn btn-dark" href="#"><img class="flip" src="assets/icons/arrow-right.svg" alt="" width="22" height="22"> Kembali</a>
+      <a class="btn btn-light" href="tercatat.html">Saya yakin</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
