@@ -108,7 +108,7 @@ The result runs at `https://platform-pemiltang-steik26.corneliusnala2332.workers
 The officials' panel is already password-protected, but it can also be locked at
 the Cloudflare layer so `/admin` cannot be reached from the internet at all:
 Cloudflare Zero Trust → Access → Applications → Self-hosted, path
-`platform-pemiltang-steik26.<subdomain>.workers.dev/admin*`, policy
+`platform-pemiltang-steik26.corneliusnala2332.workers.dev/admin*`, policy
 "emails = list of officials' emails". Free for up to 50 users.
 
 ## Operational notes
