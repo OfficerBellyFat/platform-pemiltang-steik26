@@ -101,7 +101,7 @@ npx wrangler secret put VOTING_PIN          # initial PIN; can be changed from t
 npm run deploy
 ```
 
-The result runs at `https://platform-pemiltang-steik26.<subdomain>.workers.dev`.
+The result runs at `https://platform-pemiltang-steik26.corneliusnala2332.workers.dev`.
 
 ### Optional hardening for `/admin`
 
