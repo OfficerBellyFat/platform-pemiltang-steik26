@@ -51,7 +51,9 @@
 </div>
 
 <!-- Konfirmasi untuk Cheryl Viby. Terbuka lewat :target (tanpa JS); "Kembali" menutup lagi.
-     TODO(backend): "Saya yakin" harus mengirim pilihan (cheryl-viby) ke server sebelum menuju tercatat.html. -->
+     Saat request, src/views.js menukar tombol "Saya yakin" dengan form POST /vote
+     yang mengirim pilihan "cheryl-viby" — jadi kartu ini tetap bisa mengirim
+     suara walau JavaScript dimatikan. -->
 <div class="modal" id="konfirmasi-cheryl-viby" role="dialog" aria-modal="true" aria-labelledby="konfirmasi-cheryl-viby-teks">
   <a class="modal-backdrop" href="#" aria-label="Tutup"></a>
   <div class="modal-box">
@@ -65,7 +67,8 @@
 </div>
 
 <!-- Konfirmasi untuk Muchsin Edo. Terbuka lewat :target (tanpa JS); "Kembali" menutup lagi.
-     TODO(backend): "Saya yakin" harus mengirim pilihan (muchsin-edo) ke server sebelum menuju tercatat.html. -->
+     Saat request, src/views.js menukar tombol "Saya yakin" dengan form POST /vote
+     yang mengirim pilihan "muchsin-edo". -->
 <div class="modal" id="konfirmasi-muchsin-edo" role="dialog" aria-modal="true" aria-labelledby="konfirmasi-muchsin-edo-teks">
   <a class="modal-backdrop" href="#" aria-label="Tutup"></a>
   <div class="modal-box">

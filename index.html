@@ -27,8 +27,10 @@
 
   <main class="stage">
     <!-- ===== LOGIN =====
-         TODO(backend): beri name="pin" pada input, set action/method ke endpoint login,
-         lalu arahkan hasilnya ke pilih.html. Saat ini form hanya pindah halaman dan tidak mengirim apa pun. -->
+         Form ini dikirim ke Worker: saat request, src/views.js menambahkan
+         atribut name pada input PIN, mengganti action/method ke POST /sesi,
+         dan menyisipkan pesan galat bila ada. Di server statis murni
+         (python3 -m http.server) form masih hanya pindah halaman. -->
     <h1 class="sr-only">Login pemilihan GENESIS</h1>
     <span class="logo-crop login-logo"><img src="assets/img/logo-steik.webp" alt="STEIK" width="709" height="709"></span>
     <form class="login-card" action="pilih.html" method="get">
@@ -36,6 +38,8 @@
       <input id="pin" type="password" inputmode="numeric" autocomplete="off" maxlength="6" pattern="[0-9]{6}" required placeholder="Enter 6 digit pin">
       <button type="submit" class="btn btn-dark">Login <img src="assets/icons/arrow-right.svg" alt="" width="18" height="18"></button>
     </form>
+    <!-- Hasil hanya terisi setelah panitia menutup pemilihan (lihat src/worker.js). -->
+    <a class="btn btn-light btn-rekap" href="rekap.html">Lihat Rekapitulasi</a>
   </main>
 
   <footer class="foot">

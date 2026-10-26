@@ -1,0 +1,13 @@
+# Salin menjadi .dev.vars untuk `npm run dev`.
+# Di produksi, isi nilai-nilai ini dengan `npx wrangler secret put <NAMA>`.
+
+# Kata sandi panel panitia (/admin). Pakai kalimat panjang, bukan "admin123".
+ADMIN_PASSWORD=
+
+# Kunci penandatangan cookie + pepper untuk hash PIN. 32 byte acak, hex.
+# Buat dengan: openssl rand -hex 32
+SESSION_SECRET=
+
+# PIN awal yang dipakai petugas untuk membuka kartu suara.
+# Boleh diganti kapan saja dari panel panitia.
+VOTING_PIN=123456

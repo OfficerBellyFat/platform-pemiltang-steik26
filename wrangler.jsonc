@@ -1,0 +1,37 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "platform-pemiltang-steik26",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-01-01",
+
+  // Halaman statis (index/pilih/tercatat/rekap/admin + css, fonts, assets)
+  // tetap berkas asli di repo ini. Worker yang mengambil isinya lewat
+  // binding ASSETS lalu menulis ulang bagian dinamisnya (lihat src/views.js).
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS",
+    "not_found_handling": "none",
+
+    // Worker harus jalan lebih dulu supaya "/", "/pilih.html", "/rekap.html",
+    // dan "/admin" bisa disisipi data dari D1 sebelum dikirim ke browser.
+    "run_worker_first": true
+  },
+
+  // Catatan: `npx wrangler d1 create pemiltang` ikut menulis ke berkas ini dan
+  // menamai binding-nya mengikuti nama database ("pemiltang"), padahal kode
+  // membaca env.DB. Setelah menjalankan perintah itu, pastikan `binding` di
+  // bawah tetap "DB" — kalau tidak, setiap query gagal dengan
+  // "Cannot read properties of undefined (reading 'prepare')".
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "pemiltang",
+      "database_id": "04e9c911-5dfc-43d8-b896-0c3fbbb0e3e9",
+      "migrations_dir": "migrations"
+    }
+  ],
+
+  "observability": {
+    "enabled": true
+  }
+}

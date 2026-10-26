@@ -1,0 +1,18 @@
+# Berkas yang TIDAK boleh ikut terunggah sebagai aset statis.
+# Halaman yang boleh diakses publik hanya: index.html, pilih.html,
+# tercatat.html, rekap.html, admin.html, css/, fonts/, assets/.
+
+.git
+.gitignore
+.wrangler
+.dev.vars
+.dev.vars.example
+.assetsignore
+node_modules
+package.json
+package-lock.json
+wrangler.jsonc
+README.md
+src
+tests
+migrations

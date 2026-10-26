@@ -481,3 +481,175 @@ a.card:focus-visible {
     transition: none;
   }
 }
+
+/* ==========================================================================
+   Tambahan backend — dipakai oleh Worker (src/worker.js + src/views.js).
+   Semua aturan di atas tidak diubah; bagian ini hanya menambah kelas baru
+   untuk pesan galat, tombol rekapitulasi, form suara, dan panel panitia.
+   ========================================================================== */
+
+.muted {
+  color: var(--muted);
+}
+.notice {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.login-err {
+  width: 100%;
+  border-radius: 9px;
+  background: #fff1f0;
+  padding: 12px 16px;
+  color: #a3261c;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  text-align: left;
+}
+.login-note {
+  gap: 24px;
+}
+.login-note .notice {
+  font-size: 15px;
+}
+.btn-rekap {
+  margin-top: 20px;
+}
+
+/* Form pengganti <a href="tercatat.html"> di dalam modal. */
+.form-vote {
+  display: flex;
+}
+
+/* ---------- Panel panitia (/admin) ---------- */
+.stage-admin {
+  justify-content: flex-start;
+  padding: 48px var(--pad-x) 64px;
+  text-align: left;
+}
+.title-admin {
+  font-size: clamp(26px, 2.6vw, 36px);
+}
+.admin-masuk {
+  align-self: center;
+}
+.admin-grid {
+  display: grid;
+  width: 100%;
+  max-width: 1080px;
+  gap: 24px;
+  margin-top: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-self: center;
+  font-family: var(--font-ui);
+}
+.admin-lebar {
+  grid-column: 1 / -1;
+}
+.admin-card {
+  border-radius: 20px;
+  background: var(--card);
+  padding: 24px 26px;
+  text-align: left;
+}
+.admin-card h2 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.admin-card p {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.admin-aksi {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+.admin-aksi form,
+.admin-tabel form {
+  display: flex;
+}
+.pill {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 6px 14px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+}
+.pill-buka {
+  background: #1f7a4d;
+  color: #fff;
+}
+.pill-tutup {
+  background: var(--tally);
+  color: #fff;
+}
+.pin-baru {
+  border-radius: 12px;
+  background: #fff8e1;
+  padding: 12px 16px;
+  color: var(--ink);
+}
+.admin-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+.admin-form label {
+  flex: 1 0 100%;
+  color: var(--muted);
+  font-size: 12px;
+}
+.admin-form input {
+  height: 48px;
+  min-width: 200px;
+  flex: 1;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fff;
+  padding: 0 16px;
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+}
+.admin-tabel {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.admin-tabel th,
+.admin-tabel td {
+  border-bottom: 1px solid var(--line);
+  padding: 10px 8px;
+  text-align: left;
+  font-weight: 400;
+}
+.admin-tabel thead th {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+.admin-tabel tbody th[scope='row'] {
+  font-weight: 600;
+}
+.admin-tabel td.muted {
+  padding: 16px 8px;
+}
+.admin-bahaya {
+  border: 1px solid #f0c9c4;
+  background: #fff8f7;
+}
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.04em;
+}
